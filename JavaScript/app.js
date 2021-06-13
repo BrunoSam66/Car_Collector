@@ -253,7 +253,7 @@ function drawRandomDot() {
 var cubomagico = getCubeDotColorTexture();
 cubomagico.name = "CuboMagico";
 
-importer.load("./Objetos/aguia.fbx", function(object) {
+importer.load('./Objetos/aguia.fbx', function(object) {
     mixerAnimacao = new THREE.AnimationMixer(object);
     object.traverse(function(child) {
         if (child.isMesh) {
@@ -261,7 +261,7 @@ importer.load("./Objetos/aguia.fbx", function(object) {
             child.receiveShadow = true;
         }
     });
-    object = loadFBX("./Objetos/aguia.fbx", "./Imagens/textura_agia.jpg", 0.1);
+    object = loadFBX('./Objetos/aguia.fbx', './Imagens/textura_agia.jpg', 0.1);
     object.scale.x = 0.035;
     object.scale.y = 0.035;
     object.scale.z = 0.035;
@@ -343,7 +343,7 @@ function addMundo() {
 function creatPlanoslaterais() {
 
     var geometriamundo = new THREE.BoxGeometry(100, 100, 1); //1000000
-    const texture1 = new THREE.TextureLoader().load("./Imagens/planosLaterais.jpg");
+    const texture1 = new THREE.TextureLoader().load('./Imagens/planosLaterais.jpg');
     texture1.wrapS = THREE.RepeatWrapping;
     texture1.wrapT = THREE.RepeatWrapping;
     texture1.repeat.set(5, 5);
@@ -387,7 +387,7 @@ function createBombaLenta() {
     const bomb = new THREE.Group();
 
     var bombageometry = new THREE.SphereGeometry(0.2, 32, 32, 32, 32);
-    var esferaTexture = new THREE.TextureLoader().load("../Imagens/bomba.jpg");
+    var esferaTexture = new THREE.TextureLoader().load("./Imagens/bomba.jpg");
     esferaTexture.wrapS = THREE.RepeatWrapping;
     esferaTexture.wrapT = THREE.RepeatWrapping;
     esferaTexture.repeat.set(300, 300);
@@ -403,7 +403,7 @@ function createBombaLenta() {
 
     const tampaGeometry = new THREE.CylinderGeometry(0.2, 0.2, 0.2, 32, 32);
 
-    var tampaTexture = new THREE.TextureLoader().load("../Imagens/caveira.jpg");
+    var tampaTexture = new THREE.TextureLoader().load("./Imagens/caveira.jpg");
 
     var tampaMaterial = new THREE.MeshLambertMaterial();
 
@@ -421,7 +421,7 @@ function createBombaLenta() {
 }
 
 function createCuboBonus() {
-    var cubeTexture = new THREE.TextureLoader().load("../Imagens/Bonus.jpg");
+    var cubeTexture = new THREE.TextureLoader().load("./Imagens/Bonus.jpg");
     var cubeMaterial = new THREE.MeshLambertMaterial();
     cubeMaterial.map = cubeTexture;
     var cubeGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
@@ -701,7 +701,7 @@ document.addEventListener("mousemove", (ev) => {
 function loadFBX(modelPath, texturePath, n_vezes, ) { //adiciona textura a objetos fbx
 
     var container = new THREE.Object3D();
-    const textura_ = new THREE.TextureLoader().load("."+texturePath);
+    const textura_ = new THREE.TextureLoader().load(texturePath);
     textura_.wrapS = THREE.RepeatWrapping;
     textura_.wrapT = THREE.RepeatWrapping;
     if (typeof n_vezes === 'undefined') {
