@@ -253,7 +253,7 @@ function drawRandomDot() {
 var cubomagico = getCubeDotColorTexture();
 cubomagico.name = "CuboMagico";
 
-importer.load('./Objetos/aguia.fbx', function(object) {
+importer.load('../Objetos/aguia.fbx', function(object) {
     mixerAnimacao = new THREE.AnimationMixer(object);
     object.traverse(function(child) {
         if (child.isMesh) {
