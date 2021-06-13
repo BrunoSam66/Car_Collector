@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Bruno Sampaio 68753-->
+    <title>Car_Collector 68753</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="display: contents;   position: absolute; -ms-overflow-style: none; overflow: hidden;">
+    <div id="logo" class="tituloJogo" style="left:500px;"></div>
+    <div id="gameouver" class="tituloJogo" style="left:550px;">Game Over</div>
+    <div id="NewRecord" class="tituloJogo" style="left:500px;">New Record!!</div>
+    <div id="YouWin" class="tituloJogo" style="left:600px;">You Win!!</div>
+    <script type="module">
+        import {
+            RectAreaLightUniformsLib
+        } from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/lights/RectAreaLightUniformsLib.js';
+        RectAreaLightUniformsLib.init();
+    </script>
+    <script src="./JavaScript/inflate.min.js"></script>
+    <script src="./JavaScript/three.js"></script>
+    <script src="./JavaScript/Car.js"></script>
+    <script src="./JavaScript/FBXLoader.js"></script>
+    <script type="module" src="./JavaScript/app.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <div>
+        <button id="botaoJogar" type="button" class="button" onclick="Start()">Play</button>
+        <!--iframe
+      width="0"
+      height="0"
+      src="http://www.youtube.com/embed/FoBMoI62WFs?rel=0&autoplay=1&loop=1&playlist=FoBMoI62WFs"
+      frameborder="0"
+      allowfullscreen
+    ></iframe--->
+        <img id="imagemInicial" src="./Imagens/mapa.jpg" alt="text-decoration-color" style="width: 1545px; height: 743px;">
+    </div>
+    <div id="recorde1">
+        <b style="font-size: 25px; color: gray;">Record:</b>
+        <h1 style="text-align: center; border: 2px solid gray; padding: 6px;" id="recorde"></h1>
+    </div>
+    <button id="TrayAgain" type="button" class="button" onclick="Start()">Try Again</button>
+
+    <div id="pontuacao">
+        <b style="font-size: 25px">Score:</b>
+        <h1 style="text-align: center; border: 2px solid gray; padding: 6px" id="contador"></h1>
+    </div>
+    <button class="instrucoes" id="myBtn">
+        <img src="./Imagens/instrucoes.jpg" width="25" height="28">
+    </button>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="font-size: 20px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Instructions</p>
+            <img src="./Imagens/moves.jpg" width="100" height="80">
+            <p>Move the car right/left</p>
+            <img src="./Imagens/luzesTecla.jpg" width="87" height="35">
+            <p>Turn On/Of Lights</p>
+            <img src="./Imagens/CamaraTecla.jpg" width="79" height="33">
+            <p>Change perspective</p>
+            <!--img src="./Imagens/BombaPreta.jpg" width="79" height="50">deixar o utilizador descobrir o jogo
+            <p>Collect the black bomb and you lose.</p>
+            <img src="./Imagens/cuboBonuss.jpg" width="79" height="50">
+            <p>Get the bonus.</p>
+            <img src="./Imagens/metalbomb.jpg" width="79" height="50">
+            <p>If you collect a metal bomb, you will slow down</p-->
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<style>
+    #recorde1 {
+        color: gray;
+        display: inline;
+        z-index: 99;
+        position: fixed;
+        left: 110px;
+        top: 20px;
+        text-decoration-color: white;
+    }
+
+    .tituloJogo {
+        color: gray;
+        font-size: 90px;
+        font-family: serif red serif;
+        display: inline;
+        font-weight: 200;
+        z-index: 99;
+        position: fixed;
+        top: 180px;
+        text-decoration-color: white;
+    }
+
+
+
+    .instrucoes {
+        background-color: transparent;
+        border: none;
+        padding: 6px 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 28px;
+        font-size: 20px;
+        position: absolute;
+        font-family: 'Calibri';
+        z-index: 99;
+        left: 20px;
+        top: 20px;
+    }
+
+    #pontuacao {
+        color: gray;
+        display: inline;
+        z-index: 99;
+        position: fixed;
+        right: 90px;
+        top: 20px;
+        text-decoration-color: white;
+    }
+
+    .button {
+        background-color: rgb(0, 4, 255);
+        border: none;
+        color: white;
+        padding: 16px 31px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 28px;
+        border: 3px solid #ffffff;
+        font-size: 20px;
+        position: absolute;
+        font-family: 'Calibri';
+        z-index: 99;
+        left: 700px;
+        top: 300px;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .modal-content {
+        align-content: center;
+        text-align: center;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 20%;
+        height: 55%;
+    }
+
+    .close {
+        color: #2e2d2d;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
