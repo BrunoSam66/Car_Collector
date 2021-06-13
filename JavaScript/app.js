@@ -261,7 +261,7 @@ importer.load("./Objetos/aguia.fbx", function(object) {
             child.receiveShadow = true;
         }
     });
-    object = loadFBX("./Objetos/aguia.fbx", "./Imagens/textura_agia.jpg", 0.1);
+    object = loadFBX('Objetos/aguia.fbx', "./Imagens/textura_agia.jpg", 0.1);
     object.scale.x = 0.035;
     object.scale.y = 0.035;
     object.scale.z = 0.035;
