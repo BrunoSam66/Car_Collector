@@ -253,7 +253,7 @@ function drawRandomDot() {
 var cubomagico = getCubeDotColorTexture();
 cubomagico.name = "CuboMagico";
 
-importer.load('../Objetos/aguia.fbx', function(object) {
+importer.load("./Objetos/aguia.fbx", function(object) {
     mixerAnimacao = new THREE.AnimationMixer(object);
     object.traverse(function(child) {
         if (child.isMesh) {
@@ -343,7 +343,7 @@ function addMundo() {
 function creatPlanoslaterais() {
 
     var geometriamundo = new THREE.BoxGeometry(100, 100, 1); //1000000
-    const texture1 = new THREE.TextureLoader().load("./Imagens/planosLaterais.JPG");
+    const texture1 = new THREE.TextureLoader().load("./Imagens/planosLaterais.jpg");
     texture1.wrapS = THREE.RepeatWrapping;
     texture1.wrapT = THREE.RepeatWrapping;
     texture1.repeat.set(5, 5);
@@ -421,7 +421,7 @@ function createBombaLenta() {
 }
 
 function createCuboBonus() {
-    var cubeTexture = new THREE.TextureLoader().load("./Imagens/Bonus.JPG");
+    var cubeTexture = new THREE.TextureLoader().load("./Imagens/Bonus.jpg");
     var cubeMaterial = new THREE.MeshLambertMaterial();
     cubeMaterial.map = cubeTexture;
     var cubeGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
