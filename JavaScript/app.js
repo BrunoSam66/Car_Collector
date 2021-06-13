@@ -122,7 +122,7 @@ luz.lookAt(estrada);
 
 //Construir Background
 var material1 = new THREE.MeshLambertMaterial({
-    map: loader.load("./Imagens/background.jpg"),
+    map: loader.load("../Imagens/background.jpg"),
 });
 var geometry = new THREE.PlaneGeometry(65, 33);
 var imagem = new THREE.Mesh(geometry, material1);
@@ -193,7 +193,7 @@ for (i = 0; i < 35; i++) {
                 child.receiveShadow = true;
             }
         });
-        object = loadFBX('./Objetos/Cactus.fbx', './Imagens/cactus.jpg', 10);
+        object = loadFBX('../Objetos/Cactus.fbx', '../Imagens/cactus.jpg', 10);
         cena.add(object);
         object.scale.x = (Math.floor(Math.random() * (2 - 1 + 1)) + 1) * 0.001;
         object.scale.y = (Math.floor(Math.random() * (2 - 1 + 1)) + 1) * 0.001;
@@ -261,7 +261,7 @@ importer.load('./Objetos/aguia.fbx', function(object) {
             child.receiveShadow = true;
         }
     });
-    object = loadFBX('./Objetos/aguia.fbx', './Imagens/textura_agia.jpg', 0.1);
+    object = loadFBX('../Objetos/aguia.fbx', '../Imagens/textura_agia.jpg', 0.1);
     object.scale.x = 0.035;
     object.scale.y = 0.035;
     object.scale.z = 0.035;
@@ -330,7 +330,7 @@ function AddMaterialsCena() {
 
 function addMundo() {
     var geometriamundo = new THREE.BoxGeometry(12, 4, 1000000); //1000000
-    var text = new THREE.TextureLoader().load("./Imagens/estrada.jpg");
+    var text = new THREE.TextureLoader().load("../Imagens/estrada.jpg");
     var materialmundo = new THREE.MeshLambertMaterial();
     materialmundo.map = text;
     var mundo = new THREE.Mesh(geometriamundo, materialmundo);
@@ -343,7 +343,7 @@ function addMundo() {
 function creatPlanoslaterais() {
 
     var geometriamundo = new THREE.BoxGeometry(100, 100, 1); //1000000
-    const texture1 = new THREE.TextureLoader().load("Imagens/planosLaterais.jpg");
+    const texture1 = new THREE.TextureLoader().load('./Imagens/planosLaterais.jpg');
     texture1.wrapS = THREE.RepeatWrapping;
     texture1.wrapT = THREE.RepeatWrapping;
     texture1.repeat.set(5, 5);
@@ -387,7 +387,7 @@ function createBombaLenta() {
     const bomb = new THREE.Group();
 
     var bombageometry = new THREE.SphereGeometry(0.2, 32, 32, 32, 32);
-    var esferaTexture = new THREE.TextureLoader().load("Imagens/bomba.jpg");
+    var esferaTexture = new THREE.TextureLoader().load('./Imagens/bomba.jpg');
     esferaTexture.wrapS = THREE.RepeatWrapping;
     esferaTexture.wrapT = THREE.RepeatWrapping;
     esferaTexture.repeat.set(300, 300);
@@ -403,7 +403,7 @@ function createBombaLenta() {
 
     const tampaGeometry = new THREE.CylinderGeometry(0.2, 0.2, 0.2, 32, 32);
 
-    var tampaTexture = new THREE.TextureLoader().load("Imagens/caveira.jpg");
+    var tampaTexture = new THREE.TextureLoader().load('../Imagens/caveira.jpg');
 
     var tampaMaterial = new THREE.MeshLambertMaterial();
 
@@ -421,7 +421,7 @@ function createBombaLenta() {
 }
 
 function createCuboBonus() {
-    var cubeTexture = new THREE.TextureLoader().load("Imagens/Bonus.jpg");
+    var cubeTexture = new THREE.TextureLoader().load('../Imagens/Bonus.jpg');
     var cubeMaterial = new THREE.MeshLambertMaterial();
     cubeMaterial.map = cubeTexture;
     var cubeGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
