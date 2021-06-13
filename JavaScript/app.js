@@ -193,7 +193,7 @@ for (i = 0; i < 35; i++) {
                 child.receiveShadow = true;
             }
         });
-        object = loadFBX('./Objetos/Cactus.fbx', "../Imagens/cactus.jpg", 10);
+        object = loadFBX('./Objetos/Cactus.fbx', "./Imagens/cactus.jpg", 10);
         cena.add(object);
         object.scale.x = (Math.floor(Math.random() * (2 - 1 + 1)) + 1) * 0.001;
         object.scale.y = (Math.floor(Math.random() * (2 - 1 + 1)) + 1) * 0.001;
