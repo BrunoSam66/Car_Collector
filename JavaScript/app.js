@@ -1112,7 +1112,7 @@ function highScore() {
         localStorage.highScore = '0';
     } 
 
-    if(!localStorage.getItem("Timer"))
+    /*if(!localStorage.getItem("Timer"))
     {
         localStorage.setItem("Timer",today.getTime());
     }
@@ -1124,7 +1124,7 @@ function highScore() {
         setInterval(function(){
             resetRecord();
         },idealIntervalTime);
-    } 
+    } */
 
     return saved;
 }
