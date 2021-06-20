@@ -134,7 +134,7 @@ luz.position.set(0,10,0);
 var material1 = new THREE.MeshLambertMaterial({
     map: loader.load("./Imagens/background.jpg"),
 });
-var geometry = new THREE.PlaneGeometry(65, 33);
+var geometry = new THREE.BoxGeometry(65, 33);
 var imagem = new THREE.Mesh(geometry, material1);
 imagem.position.set(0, -0.4, -9);
 
@@ -142,7 +142,7 @@ imagem.position.set(0, -0.4, -9);
 var mat = new THREE.MeshLambertMaterial({
     map: loader.load("./Imagens/background.jpg"),
 });
-var geoy = new THREE.PlaneGeometry(85, 50);
+var geoy = new THREE.BoxGeometry(85, 50);
 var imag = new THREE.Mesh(geoy, mat);
 imag.position.set(0, -0.4, -9);
 
@@ -1109,10 +1109,10 @@ function highScore() {
     }
     if (isNaN(saved)) {
         saved = 0;
-        localStorage.highScore = '0';
+        localStorage.highScore = contador;
     } 
 
-    /*if(!localStorage.getItem("Timer"))
+   /* if(!localStorage.getItem("Timer"))
     {
         localStorage.setItem("Timer",today.getTime());
     }
