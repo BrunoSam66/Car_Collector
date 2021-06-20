@@ -39,10 +39,10 @@ window.onclick = function(event) {
     }
 }
 
-function resetRecord(){
+/*function resetRecord(){
     localStorage.clear();
     localStorage.setItem("Timer",today.getTime());
-}
+}*/
 
 var today= new Date();
 var idealIntervalTime;
